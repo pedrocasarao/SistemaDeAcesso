@@ -3,7 +3,7 @@ package sistemadeacesso.michael.pucrs.br;
 public class Cliente {
 	private String nome;
 	private int idade;
-	public Cliente (int idade, String nome)
+	public Cliente (String nome , int idade)
 	{
 		this.idade = idade;
 		this.nome= nome;

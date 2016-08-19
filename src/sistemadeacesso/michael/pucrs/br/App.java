@@ -1,26 +1,24 @@
 package sistemadeacesso.michael.pucrs.br;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-
+import java.util.Scanner;
+import java.util.*;
 public class App {
 	
-
-	public static void main(String []args) throws IOException
+	public static void main(String []args) 
 	{
+		ArrayList<Cliente> caixa = new ArrayList<>();
+		System.out.println("Digite sua idade: ");
+		Scanner lerIdade  = new 	Scanner(System.in);
+		int idade = lerIdade.nextInt();
+		System.out.println("sua idade é " +idade+", Digite o seu nome: ");
+		Scanner lerNome = new Scanner(System.in);
+		String nome = lerNome.nextLine();
 		
-	    Caixa c1 = new Caixa();
-		System.out.println("Digite seu nome: ");
-	    BufferedReader bufnome = new BufferedReader(new InputStreamReader(System.in));  
-	    String nome = bufnome.readLine();
-	    System.out.println("Bom dia "+nome+", Digite sua idade:");
-	    BufferedReader bufidade = new BufferedReader(new InputStreamReader(System.in));  
-	    int idade = bufidade.read();
-	    System.out.println("Bem vindo"+ nome+""+idade );
-	    Cliente cli = new Cliente(idade,nome);
-	    
-	    c1.atendeCliente(cli);
-	    System.out.println("Quantidade de cliente em espera"+c1.tamanhoDaFila());
+		System.out.println("Bom dia "+nome +", sua idade é: "+idade);
+		Cliente c = new Cliente(nome,idade);
+		caixa.add(c);
+		
+		
+		System.out.println("tamanho da fila é  :"+caixa.size());
 	}
 }

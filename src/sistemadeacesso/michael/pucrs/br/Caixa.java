@@ -5,34 +5,17 @@ import java.util.ArrayList;
 public class Caixa {
 	
 	
-	
-	ArrayList<Cliente> lstCliente = new ArrayList<>();
-	public Caixa()
+	public void atendimentoPriorizado(ArrayList<Cliente> caixa)
 	{
-		
-	}
-	public boolean atendeCliente(Cliente c)
-	{
-		if(lstCliente.size()>0)
+		for(int i =0 ; i < caixa.size();i++)
 		{
-			lstCliente.add(c);
-			return true;
+			for(int j=1;i<caixa.size();i++)
+			if(caixa.get(i).getIdade()> 60 && caixa.get(j).getIdade()< caixa.get(i).getIdade())
+			{
+				
+			}
+				
 		}
-		else 
-			return false;
-	}
-	public boolean removeCliente(Cliente c)
-	{
-		if(lstCliente.size()<1)
-		{
-			return true;
-		}else
-			return false;
-		
-	}
-	public int tamanhoDaFila()
-	{
-		return lstCliente.size();
 		
 	}
 }
